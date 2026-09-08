@@ -12,6 +12,12 @@
 - New tier badges, cards, and progression artwork.
 - Saved-world compatibility strategy for legacy 2x, 4x, 8x, and 16x identities.
 
+### Fixed during development
+
+- Corrected a numeric overflow that prevented the six active propulsion tiers from loading in Space Engineers.
+- Added validation to prevent out-of-range game values from reaching future development builds.
+- Cleaned up legacy compatibility definitions and an unsafe Admin Tech recipe.
+
 ### Release status
 
 No public build or Workshop release is available or authorized.
