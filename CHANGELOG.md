@@ -5,11 +5,13 @@
 ### In development
 
 - Expanded active progression: Enhanced 3x, Proficient 6x, Elite 9x, Legendary 12x, Asgardian 15x, and Odin 18x.
-- Coverage for eligible functional block families and the current light/heavy armor catalog.
+- Coverage for 1,536 buildable ship, rover, and base blocks, producing 9,216 active tier variants.
+- Tiered upgrade paths for character weapons and character tools.
 - Tier-scaled armor protection from 3x through 18x.
-- Fixed 3x protection for tiered functional blocks.
-- One expandable TROA G-menu heading with eight populated block-family subcategories.
-- New tier badges, cards, and progression artwork.
+- Fixed 3x protection for all tiered non-armor blocks.
+- One expandable TROA G-menu heading with 15 populated block-family subcategories and two character-item subcategories.
+- More transparent tier badges that preserve visibility of the original item artwork.
+- Updated tier cards and progression artwork.
 - Saved-world compatibility strategy for legacy 2x, 4x, 8x, and 16x identities.
 
 ### Fixed during development
