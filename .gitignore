@@ -1,0 +1,17 @@
+# Keep this repository documentation-only.
+*.sbc
+*.cs
+*.dds
+*.mwm
+*.sbmi
+*.zip
+*.7z
+*.exe
+*.dll
+*.log
+*.csv
+Data/
+Models/
+Scripts/
+Saves/
+tools/
