@@ -30,7 +30,7 @@ Functional blocks receive fixed 3x protection. Armor protection scales with its 
 
 ![TROA Tiered Tech menu family](docs/images/menu-preview.png)
 
-Space Engineers uses flat G-menu category tabs, so the mod presents one contiguous category family:
+The G-menu uses an expandable `TROA Tiered Tech` heading that matches the built-in DLC layout. It contains Armour, Weapons & Tools, Power, Production, Logistics, Propulsion, Control & AI, and Utility subcategories.
 
 - TROA Tiered Tech — All
 - TROA Tiered Tech — Armor
