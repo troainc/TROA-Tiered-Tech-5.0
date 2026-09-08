@@ -1,6 +1,9 @@
 # Changelog
 
-## [Unreleased — 5.0]
+## [Unreleased - 5.0]
+
+- Slightly reduced the tier-badge chevrons so more of each underlying block
+  icon remains visible.
 
 ### In development
 
