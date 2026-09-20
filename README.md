@@ -2,54 +2,56 @@
 
 ![TROA Tiered Tech progression](docs/images/tier-progression.png)
 
-TROA Tiered Tech 5.0 is under development for Space Engineers. The planned progression expands buildable ship, rover, and base blocks—plus character weapons and tools—from Enhanced 3x through the new Asgardian 15x and Odin 18x tiers.
+Tiered technology progression for **Space Engineers**, built for **THE REALMS OF ASGARD**.
+Six active tiers — **3x → 18x** — across the full armor catalog and eligible
+functional blocks, with scaling protection, output, cargo, and upgrade modules.
 
-## Important development notice
+## ▶ Download
 
-- Version 5.0 is under development.
-- No public build is currently available.
-- Source code and game definitions are private.
-- No downloadable package, Steam Workshop release, or other release has been authorized.
+**Steam Workshop:** <https://steamcommunity.com/sharedfiles/filedetails/?id=3804068289>
 
-This public repository contains player-facing documentation, approved PNG artwork, compatibility notes, the roadmap, and development updates only. It intentionally contains no SBC definitions, scripts, models, DDS assets, generators, manifests, saves, logs, executables, archives, Workshop IDs, or private repository links.
+Subscribe on the Workshop to install the mod and receive automatic updates. This
+repository is documentation only — the mod itself is distributed exclusively
+through the official Workshop item above.
 
-## Active tiers
+## Tiers
 
-| Tier | Technology | Intended role |
-|---:|---|---|
-| 3x | Enhanced | Entry active tier |
-| 6x | Proficient | Advanced production and performance |
-| 9x | Elite | High-tier engineering |
-| 12x | Legendary | Endgame foundation |
-| 15x | Asgardian | Efficient endgame technology |
-| 18x | Odin | Final maximum-output tier |
+| Tier | Name | Unlocks after |
+|-----:|------|---------------|
+| 3x  | Enhanced   | — (entry tier) |
+| 6x  | Proficient | Tech 3x |
+| 9x  | Elite      | Tech 6x |
+| 12x | Legendary  | Tech 9x |
+| 15x | Asgardian  | Tech 12x |
+| 18x | Odin       | Tech 15x (final tier) |
 
-The current private development catalog covers 1,536 buildable base blocks and generates 9,216 active block variants across the six tiers. Non-armor blocks receive fixed 3x protection. Armor protection scales with its active tier from 3x to 18x. Character weapons and tools also receive tier-specific upgrade paths.
+## What scales with tier
 
-## Menu organization
+- **Armor protection** — scales by tier (3x → 18x); light/heavy distinction preserved.
+- **Functional blocks** — production speed, power output/storage, cargo capacity,
+  jump range, thruster force, sensor/antenna range, and more scale by tier.
+- **Upgrade modules & gas generators** — Productivity / Effectiveness (yield) /
+  Energy modules and O2/H2 generators scale by tier. Full per-tier table with
+  worked examples: **[docs/UPGRADE_MODULE_SCALING.md](docs/UPGRADE_MODULE_SCALING.md)**.
 
-![TROA Tiered Tech menu family](docs/images/menu-preview.png)
+## In the build menu
 
-The G-menu uses an expandable `TROA Tiered Tech` heading that matches the built-in expandable category layout. Its block families are followed by dedicated Character Tools and Character Weapons entries.
+Each block is a single **`+` group** you scroll with the mouse wheel to pick the
+tier (3x → 18x), organized under the expandable **TROA Tiered Tech** heading with
+per-family subcategories.
 
-- Armour
-- Automation
-- Control
-- Decorative
-- Logistics
-- Mechanical
-- Power
-- Production
-- Propulsion
-- Prototech
-- Structure
-- Tools
-- Utility
-- Weapons
-- Windows
-- Character Tools
-- Character Weapons
+## Documentation
 
-Tier artwork uses a more transparent badge overlay so the original block or item image remains easy to recognize.
+- **[Upgrade & generator scaling](docs/UPGRADE_MODULE_SCALING.md)** — per-tier numbers for players
+- **[Tier reference](docs/TIERS.md)** — tier names, protection and scaling rules
+- **[Compatibility](docs/COMPATIBILITY.md)**
+- **[Changelog](CHANGELOG.md)**
+- **[License / usage terms](LICENSE.md)**
 
-See the [roadmap](ROADMAP.md), [tier reference](docs/TIERS.md), and [compatibility notes](docs/COMPATIBILITY.md) for more information.
+## Usage terms
+
+This is a **monitored, all-rights-reserved** mod. **No re-upload, modification,
+extraction, reverse-engineering, or redistribution.** Linking to the official
+Workshop item is welcome. See **[LICENSE.md](LICENSE.md)**.
+
+© 2026 The Realms of Asgard — <https://therealmsofasgard.com/>

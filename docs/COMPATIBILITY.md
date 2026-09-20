@@ -1,9 +1,18 @@
-# Compatibility Notes
+# Compatibility
 
-- TROA Tiered Tech 5.0 targets the current development reference build of Space Engineers.
-- Legacy Tech2x, Tech4x, Tech8x, and Tech16x identities are retained privately so existing grids can continue to resolve them.
-- Legacy blocks and recipes are hidden from the normal 5.0 progression.
-- DLC ownership requirements and indicators are intended to remain intact.
-- Legacy-world, multiplayer, and dedicated-server testing must pass before release approval.
+- **Six active tiers only** — 3x, 6x, 9x, 12x, 15x, 18x. The old 2x/4x/8x/16x
+  tiers have been removed; rebuild any grids that still used those with the
+  current tiers.
+- **Economy 2** compatibility is retained.
+- **WeaponCore / AI blocks** — the vanilla weapons and AI blocks are **not**
+  tiered (tiering them conflicts with WeaponCore and the AI system). Use the
+  normal vanilla / WeaponCore blocks for those; all other block families are
+  tiered as usual.
+- **Defense Shields** — TROA does not tier any shield block; use the Defense
+  Shields mod's own blocks.
+- DLC tags, models, mount points, conveyor ports, mirroring, construction stages,
+  sounds, effects, airtightness, and PCU are inherited from each source block, so
+  tiered blocks behave like their base block aside from the tier scaling.
+- DLC ownership restrictions carry over — DLC-gated blocks still require the DLC.
 
-No public build is currently available. This repository contains documentation and approved PNG artwork only.
+Back up worlds before major mod updates.
