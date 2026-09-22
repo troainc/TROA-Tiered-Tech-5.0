@@ -1,55 +1,113 @@
 # Changelog
 
+## [5.0.14] — 2026-09-21
+
+### Fixed
+
+- **Cargo containers, lockers, armory lockers, and weapon racks showed ~9.2
+  trillion L (unlimited) and did not scale per tier.** Space Engineers defines an
+  inventory block's storage volume with an `InventoryComponentDefinition` in
+  `EntityComponents.sbc` (keyed by subtype), and the 5.0 generator never created
+  those for the tier subtypes — so the 5.0.9 inventory containers had no size and
+  defaulted to unbounded. Added `TROA5_EntityComponents.sbc` (294 entries) with
+  the vanilla inventory size **scaled by tier**, so volumes are correct and tier
+  up (e.g. Large Cargo Container: vanilla 421,875 L → 3x ≈ 1.27M L → 18x ≈ 7.59M
+  L), matching how gas-tank capacity already scales.
+
+## [5.0.13] — 2026-09-21
+
+### Fixed
+
+- **More "Block-pair … is not in the same block-variant group" server errors.**
+  Some blocks (corner LCDs, corner LCD flats, 2-corner interior lights,
+  transponders) have no `BlockPairName`, so 5.0.8's BlockPairName grouping put the
+  large and small counterparts in separate groups even though Space Engineers
+  pairs them by grid size. The group builder now normalizes the `Large`/`Small`
+  grid prefix for these blocks so both counterparts share one group, and the
+  validator checks grid counterparts too. Verified: 0 pair-rule violations.
+
+## [5.0.12] — 2026-09-21
+
+### Fixed
+
+- **LCD / text panels had no settings in the control panel.** Space Engineers
+  attaches the LCD surface component through a wildcard entity container
+  (`TextPanel` / `SubtypeId="*"` → `MyObjectBuilder_LcdSurfaceComponent`), and
+  that wildcard does not reach mod-added tier subtypes — so every tiered LCD,
+  text panel, corner LCD, billboard, and lab screen came up with no surface and
+  no control-panel options. The container generator now materializes wildcard
+  containers explicitly for tier blocks, so tiered LCDs get their surface
+  component (and settings) like the vanilla panels.
+
 ## [5.0.11] — 2026-09-20
 
 ### Removed
 
-- **Tier copies of AI blocks and WeaponCore weapons** — placing tiered AI blocks
-  (Flight Movement, Path Recorder, Offensive/Defensive Combat, Event Controller)
-  crashed the game, and tiered weapons disappeared under WeaponCore, because that
-  code only recognizes the original subtypes. Those 192 tier blocks are removed;
-  use the original vanilla/WeaponCore blocks. Warhead/decoy/safe-zone tiers kept.
-  (The Defense Shields "heat" spam is not a TROA block — TROA tiers no shield.)
+- **Tier copies of blocks driven by another mod's code, which broke when tiered.**
+  Placing tiered **AI blocks** (Flight Movement, Path Recorder, Offensive/Defensive
+  Combat, Event Controller) crashed the client/server, and tiered **weapons**
+  (interior turret, large/small gatling + missile turrets/launchers) disappeared
+  under WeaponCore — because that code only recognizes the original subtypes.
+  Removed all 192 of those tier definitions and every reference to them (build
+  categories, variant groups, entity containers). Players use the original
+  vanilla/WeaponCore blocks for these instead; all other tiered blocks are
+  unchanged. Warhead, decoy, and safe-zone tiers are kept.
+- Note: the Defense Shields "heat" spam is **not** a TROA block — TROA does not
+  tier any shield block, so that is the Defense Shields mod/server config, not
+  Tiered Tech.
 
 ## [5.0.10] — 2026-09-20
 
 ### Fixed
 
 - **Upgrade modules didn't scale with tier.** Tiered Productivity / Effectiveness
-  (yield) / Energy modules now scale their effect per tier (e.g. Productivity
-  +50% → +900%, Effectiveness yield ×1.09 → ×2.63 per module at 18x).
-- **Oxygen/Hydrogen generators didn't scale.** Ice processing / gas output now
-  scales by tier.
+  (yield) / Energy modules kept vanilla `Modifier` values at every tier, so a 18x
+  module did nothing more than a 3x one. Modifiers now scale by tier — additive
+  modifiers by the tier number (Productivity 0.5 → 9.0 at 18x), multiplicative
+  modifiers by scaling the bonus (Effectiveness 1.09 → 2.63, Energy 1.22 → 5.01 at
+  18x).
+- **Oxygen/Hydrogen generators didn't scale.** `IceConsumptionPerSecond` now scales
+  by tier, so higher-tier generators process ice and produce gas that many times
+  faster.
 
 ### Added
 
-- `docs/UPGRADE_MODULE_SCALING.md` — per-tier scale table for players.
+- `docs/UPGRADE_MODULE_SCALING.md` — a player-facing table of every module type and
+  generator throughput per tier, with worked examples.
 
 ## [5.0.9] — 2026-09-20
 
 ### Fixed
 
 - **Tiered inventory blocks showed a maximum of 0 L and crates/lockers would not
-  open.** Space Engineers attaches a block's inventory through
-  `EntityContainers.sbc` and the 5.0 generator never created those entries for
-  the tier subtypes, so every tiered cargo container, bulk container, cargo
-  terminal, locker, armory locker, weapon rack, and conveyor-access block had no
-  inventory. Added `TROA5_EntityContainers.sbc` (948 entries) so inventory volume
-  and open/close work like the vanilla base blocks.
+  open.** Modern Space Engineers attaches a block's inventory through
+  `EntityContainers.sbc` (a per-subtype map to an `MyObjectBuilder_Inventory`
+  component), and the 5.0 generator copied the block definitions but not those
+  container entries — so every tiered cargo container, small/large/industrial
+  container, bulk container, cargo terminal, locker, armory locker, weapon rack,
+  and conveyor-access block had no inventory component. Generated
+  `TROA5_EntityContainers.sbc` with container entries for all tiered blocks
+  (948 entries), so inventory volume and open/close now work exactly like the
+  vanilla base blocks. Modded cargo blocks (e.g. AQD conveyor access) get a
+  generic inventory container fallback.
 
 ## [5.0.8] — 2026-09-20
 
 ### Fixed
 
 - **Thousands of server "Block-pair … is not in the same block-variant group"
-  errors.** The tier scroll-groups added in 5.0.5 were keyed by block subtype, so
-  a large block and its small-grid partner (which share a BlockPairName) landed in
-  different groups — Space Engineers requires both halves of a block-pair in one
-  variant group and logged an error per pair otherwise (~4,000+ on the full
-  server). Groups are now keyed by BlockPairName, so the large block, its
-  small-grid partner, and all six tiers share one group. The "+" tier scrolling is
-  unchanged. Per-family group files are replaced by a single
-  `TROA5_VariantGroups.sbc`.
+  errors.** The tier scroll-groups added in 5.0.5 were keyed by block subtype,
+  which put the large block (e.g. `Window1x2Inv9x`) and its small-grid partner
+  (`SmallWindow1x2Inv9x`) into different groups even though they share a
+  BlockPairName — and Space Engineers requires both halves of a block-pair to be
+  in the same variant group, logging an error per pair otherwise (~4,000+ on the
+  full server). Groups are now keyed by **BlockPairName** (tier stripped), so the
+  large block, its small-grid partner, and all six tiers live in one group, and
+  every block is included so no pair-half is orphaned. Verified: 0 block-pair
+  violations, 0 blocks in more than one group. The per-family
+  `TROA5_VariantGroups_*.sbc` files are replaced by a single
+  `TROA5_VariantGroups.sbc` (1,021 groups covering all 9,216 tiered blocks). The
+  in-game "+" tier scrolling is unchanged.
 
 ## [5.0.7] — 2026-09-19
 
