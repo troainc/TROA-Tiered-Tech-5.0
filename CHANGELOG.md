@@ -1,5 +1,19 @@
 # Changelog
 
+## [5.0.15] — 2026-09-22
+
+### Fixed
+
+- **Cargo containers, lockers, armory lockers, and weapon racks still showed ~9.2
+  trillion L and did not tier.** The 5.0.14 `TROA5_EntityComponents.sbc` was
+  generated with the polymorphic type written as a plain `type="…"` instead of
+  `xsi:type="…"` (a namespace-prefix bug in the generator), so Space Engineers did
+  not recognize the entries as `InventoryComponentDefinition`s and silently
+  dropped them — leaving inventory volume unbounded exactly as before. The
+  generator now preserves the `xsi:type` attribute; all 294 tier inventory
+  components load, so volumes are correct and scale per tier (Large Cargo
+  Container: 3x ≈ 1.27M L → 18x ≈ 7.59M L). Re-publish the Workshop item to apply.
+
 ## [5.0.14] — 2026-09-21
 
 ### Fixed
