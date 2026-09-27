@@ -4,23 +4,17 @@
 
 ### Removed
 
-- **Tiered LCD and text-panel support.** TROA Tiered Tech no longer supplies standalone `TextPanel` or `LCDPanelsBlock` variants, including the old `LCDBlocks` terminal grouping. Use vanilla Space Engineers panels for player screens.
+- Removed the obsolete `LCDBlocks` terminal group. Tier Tech no longer supplies or groups standalone `TextPanel` or `LCDPanelsBlock` definitions; use vanilla Space Engineers panels for player screens.
 
 ### Compatibility
 
 - Cockpit, store, vending-machine, and safe-zone display surfaces remain; they are unrelated functional UI, not standalone LCD blocks.
-- Existing grids that used tiered LCD blocks need those screens rebuilt with vanilla panels after updating.
 
-## [5.0.17] — 2026-09-22
+## [5.0.18] — 2026-09-27
 
-### Fixed
+### Removed
 
-- **Vanilla LCD panels retain their settings alongside tiered panels.** The root entity mapping file now includes the vanilla `TextPanel/*` LCD-surface fallback as well as the explicit tiered mappings. This fixes a plain 60 W LCD Panel showing no Control Panel LCD settings on the server.
-## [5.0.16] — 2026-09-22
-
-### Fixed
-
-- **Tiered LCD settings and inventory limits now load from the correct engine definition file.** The prior component mappings were generated into a nested folder instead of the root `Data/EntityContainers.sbc` file that Space Engineers consumes. The repaired package puts all 168 tiered LCD-surface mappings and 294 tier-scaled inventory definitions in the engine-loaded file. After a full restart, verify LCD settings in the Control Panel and finite, tier-scaled cargo volume. The package also removes obsolete duplicate generated mapping files to avoid unnecessary Torch definition-load work.
+- **Tiered LCD / text-panel screens.** Tiered LCDs did not work reliably on dedicated servers, so all standalone tiered LCD blocks and LCD-panel props were removed. Existing grids that used them need screens rebuilt with vanilla LCD/text-panel blocks. All other tiered blocks, including cargo/inventory scaling, are unchanged.
 ## [5.0.15] — 2026-09-22
 
 ### Fixed
@@ -72,7 +66,8 @@
   text panel, corner LCD, billboard, and lab screen came up with no surface and
   no control-panel options. The container generator now materializes wildcard
   containers explicitly for tier blocks, so tiered LCDs get their surface
-  component (and settings) like the vanilla panels.
+  component (and settings) like the vanilla panels. _(Superseded by 5.0.18, which
+  removes tiered LCDs entirely — the surface never worked reliably on servers.)_
 
 ## [5.0.11] — 2026-09-20
 

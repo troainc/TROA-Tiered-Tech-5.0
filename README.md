@@ -36,7 +36,7 @@ through the official Workshop item above.
 
 ## LCD update note — 5.0.19
 
-Tiered LCD and text-panel blocks are no longer part of TROA Tiered Tech. This includes standalone screens, LCD props, and the obsolete LCD terminal grouping. Use Space Engineers' vanilla LCD/text-panel blocks for player screens. Existing tiered LCD blocks are intentionally removed; replace them with vanilla panels after updating.
+Tiered LCD and text-panel blocks are no longer part of TROA Tiered Tech. This includes standalone screens, LCD props, and the obsolete `LCDBlocks` terminal grouping. Use Space Engineers' vanilla LCD/text-panel blocks for player screens. Existing tiered LCD blocks are intentionally removed; replace them with vanilla panels after updating.
 
 Cockpit, store, vending-machine, and safe-zone display surfaces are unrelated functional UI and remain available. Cargo and inventory scaling are unchanged.
 
