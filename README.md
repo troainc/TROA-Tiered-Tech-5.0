@@ -34,6 +34,13 @@ through the official Workshop item above.
   Energy modules and O2/H2 generators scale by tier. Full per-tier table with
   worked examples: **[docs/UPGRADE_MODULE_SCALING.md](docs/UPGRADE_MODULE_SCALING.md)**.
 
+### Not tiered
+
+- **LCD / text-panel screens.** LCDs are **not** part of Tiered Tech — use the
+  vanilla LCD, text-panel, corner-LCD, and billboard blocks for screens. (Tiered
+  LCDs were removed in 5.0.18 because their display surface did not work reliably
+  on dedicated servers; the vanilla LCD blocks work normally.)
+
 ## In the build menu
 
 Each block is a single **`+` group** you scroll with the mouse wheel to pick the
