@@ -34,6 +34,15 @@ through the official Workshop item above.
   Energy modules and O2/H2 generators scale by tier. Full per-tier table with
   worked examples: **[docs/UPGRADE_MODULE_SCALING.md](docs/UPGRADE_MODULE_SCALING.md)**.
 
+## LCD update note — 5.0.19
+
+Tiered LCD and text-panel blocks are no longer part of TROA Tiered Tech. This includes standalone screens, LCD props, and the obsolete LCD terminal grouping. Use Space Engineers' vanilla LCD/text-panel blocks for player screens. Existing tiered LCD blocks are intentionally removed; replace them with vanilla panels after updating.
+
+Cockpit, store, vending-machine, and safe-zone display surfaces are unrelated functional UI and remain available. Cargo and inventory scaling are unchanged.
+
+## Server load
+
+A large tier catalog has a noticeable normal definition-load phase; server logs should continue advancing rather than repeating errors or stopping at a single definition.
 ## In the build menu
 
 Each block is a single **`+` group** you scroll with the mouse wheel to pick the

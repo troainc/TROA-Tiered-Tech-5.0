@@ -1,5 +1,26 @@
 # Changelog
 
+## [5.0.19] — 2026-09-27
+
+### Removed
+
+- **Tiered LCD and text-panel support.** TROA Tiered Tech no longer supplies standalone `TextPanel` or `LCDPanelsBlock` variants, including the old `LCDBlocks` terminal grouping. Use vanilla Space Engineers panels for player screens.
+
+### Compatibility
+
+- Cockpit, store, vending-machine, and safe-zone display surfaces remain; they are unrelated functional UI, not standalone LCD blocks.
+- Existing grids that used tiered LCD blocks need those screens rebuilt with vanilla panels after updating.
+
+## [5.0.17] — 2026-09-22
+
+### Fixed
+
+- **Vanilla LCD panels retain their settings alongside tiered panels.** The root entity mapping file now includes the vanilla `TextPanel/*` LCD-surface fallback as well as the explicit tiered mappings. This fixes a plain 60 W LCD Panel showing no Control Panel LCD settings on the server.
+## [5.0.16] — 2026-09-22
+
+### Fixed
+
+- **Tiered LCD settings and inventory limits now load from the correct engine definition file.** The prior component mappings were generated into a nested folder instead of the root `Data/EntityContainers.sbc` file that Space Engineers consumes. The repaired package puts all 168 tiered LCD-surface mappings and 294 tier-scaled inventory definitions in the engine-loaded file. After a full restart, verify LCD settings in the Control Panel and finite, tier-scaled cargo volume. The package also removes obsolete duplicate generated mapping files to avoid unnecessary Torch definition-load work.
 ## [5.0.15] — 2026-09-22
 
 ### Fixed
