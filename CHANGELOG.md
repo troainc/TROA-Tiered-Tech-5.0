@@ -1,5 +1,21 @@
 # Changelog
 
+## [5.0.18] — 2026-09-27
+
+### Removed
+
+- **Tiered LCD / text-panel screens.** Tiered LCDs never got working display
+  settings on dedicated servers — opening one in the Control Panel showed no
+  options — and the container fixes attempted for them (5.0.12) did not hold up
+  server-side. All tiered LCD blocks are now removed: every LCD / text panel
+  (panels of all sizes — wide, full-block, corner, curved, diagonal — plus Holo
+  LCDs, Transparent LCDs, text panels, and console screens) and the LCD-panel
+  props (billboards, lab equipment, microscope, medical station). **Use the
+  vanilla LCD / text-panel blocks for screens** — they work normally. All other
+  tiered blocks are unchanged, including the tier-scaled cargo/inventory volumes.
+- **Note:** grids currently using tiered LCD blocks will lose those blocks on
+  load — rebuild those screens with the vanilla LCD / text-panel blocks.
+
 ## [5.0.15] — 2026-09-22
 
 ### Fixed
@@ -51,7 +67,8 @@
   text panel, corner LCD, billboard, and lab screen came up with no surface and
   no control-panel options. The container generator now materializes wildcard
   containers explicitly for tier blocks, so tiered LCDs get their surface
-  component (and settings) like the vanilla panels.
+  component (and settings) like the vanilla panels. _(Superseded by 5.0.18, which
+  removes tiered LCDs entirely — the surface never worked reliably on servers.)_
 
 ## [5.0.11] — 2026-09-20
 
