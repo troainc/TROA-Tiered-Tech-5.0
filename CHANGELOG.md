@@ -264,3 +264,7 @@ _No SubtypeIds, gameplay values, tiers, components, or menu structure changed._
   existing grids.
 - Legacy blocks and recipes are hidden from normal build and production
   categories.
+
+## Documentation update - 2026-10-03
+
+- Added a documentation landing page for Workshop installation, tier selection, scaling tables, and compatibility guidance.

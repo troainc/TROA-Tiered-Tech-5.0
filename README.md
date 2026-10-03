@@ -64,3 +64,7 @@ extraction, reverse-engineering, or redistribution.** Linking to the official
 Workshop item is welcome. See **[LICENSE.md](LICENSE.md)**.
 
 © 2026 The Realms of Asgard — <https://therealmsofasgard.com/>
+
+## Documentation
+
+See [`docs/README.md`](docs/README.md) for install/update instructions and links to tier values, upgrade scaling, and compatibility notes.
