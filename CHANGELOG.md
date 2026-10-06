@@ -1,3 +1,9 @@
+## Public operator documentation expansion - 2026-10-06
+
+- Added a detailed user guide under docs/USER_GUIDE.md and linked it from the documentation index and root README.
+- Documented current setup, feature ownership, command/config references, operational workflows, safety boundaries, and version/status limitations using the published behavior.
+- Added repository-local context, contribution instructions, and a dated documentation log entry. No private source or credentials are included.
+
 # Changelog
 
 ## [5.0.19] — 2026-09-27
@@ -268,3 +274,4 @@ _No SubtypeIds, gameplay values, tiers, components, or menu structure changed._
 ## Documentation update - 2026-10-03
 
 - Added a documentation landing page for Workshop installation, tier selection, scaling tables, and compatibility guidance.
+

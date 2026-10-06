@@ -9,3 +9,8 @@ Tiered Tech is installed by subscribing to the [official Space Engineers Worksho
 - Since version 5.0.19, standalone Tiered LCD/text-panel blocks are removed; use vanilla LCDs instead.
 
 Subscribe through Steam Workshop to install/update. After updating, allow the server to finish its normal definition loading and check logs for errors before players test the new blocks.
+
+## Start here
+
+Read the [detailed user and operator guide](USER_GUIDE.md) for supported setup, feature workflows, safe operation, and troubleshooting.
+

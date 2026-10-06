@@ -68,3 +68,9 @@ Workshop item is welcome. See **[LICENSE.md](LICENSE.md)**.
 ## Documentation
 
 See [`docs/README.md`](docs/README.md) for install/update instructions and links to tier values, upgrade scaling, and compatibility notes.
+
+
+## Documentation
+
+Use the [documentation index](docs/README.md) and [detailed operator guide](docs/USER_GUIDE.md) for setup, everyday use, feature behavior, and troubleshooting. Check the changelog and the current release before applying version-specific instructions.
+
