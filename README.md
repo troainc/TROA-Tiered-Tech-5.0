@@ -34,7 +34,7 @@ through the official Workshop item above.
   Energy modules and O2/H2 generators scale by tier. Full per-tier table with
   worked examples: **[docs/UPGRADE_MODULE_SCALING.md](docs/UPGRADE_MODULE_SCALING.md)**.
 
-**Upcoming balance update:** High-tier Effectiveness modules will receive diminishing returns to limit refinery output from stacked modules. See the [changelog](CHANGELOG.md) for the planned change; it takes effect with a future Workshop update.
+**Refinery yield balance:** High-tier Effectiveness modules now use diminishing returns to limit output from stacked modules. Four 18x modules provide about 2.23× total yield, down from nearly 48×. Productivity and Energy scaling are unchanged. This adjustment is included in the released Tier Tech update.
 
 ## LCD update note — 5.0.19
 
