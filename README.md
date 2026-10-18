@@ -34,6 +34,8 @@ through the official Workshop item above.
   Energy modules and O2/H2 generators scale by tier. Full per-tier table with
   worked examples: **[docs/UPGRADE_MODULE_SCALING.md](docs/UPGRADE_MODULE_SCALING.md)**.
 
+**Upcoming balance update:** High-tier Effectiveness modules will receive diminishing returns to limit refinery output from stacked modules. See the [changelog](CHANGELOG.md) for the planned change; it takes effect with a future Workshop update.
+
 ## LCD update note — 5.0.19
 
 Tiered LCD and text-panel blocks are no longer part of TROA Tiered Tech. This includes standalone screens, LCD props, and the obsolete `LCDBlocks` terminal grouping. Use Space Engineers' vanilla LCD/text-panel blocks for player screens. Existing tiered LCD blocks are intentionally removed; replace them with vanilla panels after updating.
