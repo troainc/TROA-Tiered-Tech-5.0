@@ -6,11 +6,11 @@
 
 # Changelog
 
-## Unreleased
+## Refinery Yield Balance — Released
 
-### Balance
+### Fixed
 
-- Tiered Effectiveness (refinery-yield) modules are being rebalanced with diminishing returns so stacking high-tier modules cannot multiply refinery output far beyond intended progression. Four 18x modules are being reduced from about 48× to about 2.23× total yield. Productivity and Energy modules are unchanged. The change takes effect with a future Workshop update.
+- **Stacked high-tier Effectiveness modules produced excessive refinery output.** Yield now uses diminishing returns at higher tiers. Four 18x modules provide about 2.23× total yield, down from nearly 48×. Productivity and Energy module scaling are unchanged. This balance adjustment is included in the released Tier Tech update.
 
 ## [5.0.19] — 2026-09-27
 
